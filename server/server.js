@@ -141,7 +141,7 @@ const PORT =
 
 app.listen(PORT, () => {
   console.log(
-    `Server running on http://localhost:${PORT}`
+    ` BioArchive API running on port ${PORT}`
   );
 });
 process.on("SIGINT", async () => {
