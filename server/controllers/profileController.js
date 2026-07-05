@@ -147,7 +147,7 @@ try {
 } catch (err) {
   console.log("Cloudinary ping failed:", err.message);
 }
-      profile.avatar = avatarFile.path;
+      profile.avatar = avatarFile.path || avatarFile.secure_url;
     }
 
     // ==========================
@@ -161,7 +161,7 @@ try {
     ) {
       const bannerFile = req.files.banner[0];
 
-      profile.banner = bannerFile.path;
+      profile.banner = bannerFile.path || bannerFile.secure_url;
     }
 
     await profile.save();

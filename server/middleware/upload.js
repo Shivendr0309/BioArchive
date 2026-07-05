@@ -5,7 +5,12 @@ const cloudinary = require("../config/cloudinary");
 const storage = new CloudinaryStorage({
   cloudinary,
   params: async (req, file) => ({
-    folder: "BioArchive",
+    folder:
+      file.fieldname === "avatar"
+        ? "BioArchive/Profile/Avatar"
+        : file.fieldname === "banner"
+        ? "BioArchive/Profile/Banner"
+        : "BioArchive",
     allowed_formats: ["jpg", "jpeg", "png", "webp"],
     public_id: `${Date.now()}-${file.originalname
       .split(".")[0]
