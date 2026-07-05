@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -----------------------------
+   Global Defaults
+------------------------------ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f8fafc;
+  color: #0f172a;
+  font-family:
+    Inter,
+    system-ui,
+    sans-serif;
+  
+  margin: 0;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+html.dark body {
+  background: #020617;
+  color: #f8fafc;
+}
+
+/* -----------------------------
+   Reusable Components
+------------------------------ */
+
+@layer components {
+  .app-container {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .app-card {
+    @apply rounded-[28px]
+           border
+           border-gray-200
+           bg-white
+           shadow-sm
+           transition-all
+           duration-300
+           hover:shadow-xl
+           dark:border-slate-700
+           dark:bg-[#0f172a];
+  }
+
+  .app-button-primary {
+    @apply rounded-2xl
+           bg-gradient-to-r
+           from-indigo-600
+           to-cyan-500
+           px-6
+           py-3
+           font-semibold
+           text-white
+           shadow-lg
+           transition-all
+           duration-300
+           hover:scale-105;
+  }
+
+  .app-button-secondary {
+    @apply rounded-2xl
+           border
+           border-gray-300
+           bg-white
+           px-6
+           py-3
+           font-semibold
+           transition-all
+           duration-300
+           hover:bg-gray-100
+           dark:border-slate-700
+           dark:bg-slate-900
+           dark:hover:bg-slate-800;
+  }
+
+  .app-input {
+    @apply w-full
+           rounded-2xl
+           border
+           border-gray-300
+           bg-white
+           px-5
+           py-4
+           outline-none
+           transition-all
+           duration-300
+           focus:border-indigo-500
+           focus:ring-4
+           focus:ring-indigo-100
+           dark:border-slate-700
+           dark:bg-slate-900
+           dark:text-white;
+  }
+}
+
+/* -----------------------------
+   Scrollbar
+------------------------------ */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6366f1;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4338ca;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(2deg);
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(2deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(2deg);
+  }
+}
+.ProseMirror p.is-editor-empty:first-child::before {
+  color: #94a3b8;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}

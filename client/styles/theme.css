@@ -1,0 +1,33 @@
+:root {
+
+  --primary: #4f46e5;
+
+  --primary-hover: #4338ca;
+
+  --secondary: #06b6d4;
+
+  --success: #22c55e;
+
+  --danger: #ef4444;
+
+  --background: #f8fafc;
+
+  --surface: #ffffff;
+
+  --border: #e5e7eb;
+
+  --text: #111827;
+
+}
+
+.dark {
+
+  --background: #020617;
+
+  --surface: #0f172a;
+
+  --border: #334155;
+
+  --text: #f8fafc;
+
+}
