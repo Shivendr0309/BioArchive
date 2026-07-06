@@ -1,45 +1,61 @@
+<div align="center">
+
 # 📚 BioArchive
 
-A modern full-stack blogging platform where developers can write, publish, discover, and manage technical articles. BioArchive provides a clean writing experience, powerful search, user profiles, bookmarking, reading history, and a responsive UI built with modern web technologies.
+### Modern Full-Stack Blogging Platform
+
+Create • Discover • Share • Connect
+
+<br>
+
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Online-success?style=for-the-badge)](https://bioarchive-blog.vercel.app/)
+[![Backend](https://img.shields.io/badge/API-Render-46E3B7?style=for-the-badge)](https://bioarchive.onrender.com)
+![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-20-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38BDF8?style=for-the-badge&logo=tailwindcss&logoColor=white)
+
+</div>
 
 ---
 
-## ✨ Features
+# ✨ Overview
 
-### 📝 Blogging
-- Create rich-text articles using TipTap Editor
-- Edit and delete published articles
-- Save articles as drafts
-- Upload cover images with Cloudinary
-- Categorize articles
+BioArchive is a modern full-stack blogging platform where users can write, publish, discover, and manage articles through a clean and responsive interface.
 
-### 👤 User Features
-- Secure JWT Authentication
-- User Profiles
-- Edit Profile
-- Dashboard
-- Reading History
-- Bookmarks
-- Like Articles
+The application focuses on delivering a professional blogging experience with secure authentication, rich text editing, Cloudinary-powered media uploads, user profiles, bookmarks, comments, and a personalized dashboard.
 
-### 🔍 Search & Discovery
-- Instant Search
-- Category Filtering
-- Featured Articles
-- Related Articles
+---
 
-### 💬 Community
-- Comments Section
-- Author Profiles
-- Article Recommendations
+# 🚀 Live Demo
 
-### 🎨 User Experience
-- Responsive Design
-- Dark Mode
-- Skeleton Loading Screens
-- Empty States
-- Modern UI with Tailwind CSS
-- Rich Text Editing
+### Frontend
+
+https://bioarchive-blog.vercel.app/
+
+### Backend API
+
+https://bioarchive.onrender.com
+
+---
+
+# ✨ Key Features
+
+| Feature | Status |
+|----------|:------:|
+| JWT Authentication | ✅ |
+| User Profiles | ✅ |
+| Rich Text Editor (TipTap) | ✅ |
+| Blog Management | ✅ |
+| Cloudinary Image Upload | ✅ |
+| Dashboard | ✅ |
+| Search Articles | ✅ |
+| Category Filtering | ✅ |
+| Comments | ✅ |
+| Bookmarks | ✅ |
+| Reading History | ✅ |
+| Responsive Design | ✅ |
+| Dark Mode | ✅ |
 
 ---
 
@@ -47,161 +63,131 @@ A modern full-stack blogging platform where developers can write, publish, disco
 
 ## Frontend
 
-- React.js
+- React
 - Vite
 - Tailwind CSS
-- TipTap Editor
-- Axios
 - React Router
-- React Toastify
-- Lucide React
+- Axios
+- TipTap Editor
 
 ## Backend
 
 - Node.js
 - Express.js
-- MongoDB
+- MongoDB Atlas
 - Mongoose
 - JWT Authentication
 - Multer
 - Cloudinary
 
+## Deployment
+
+- Vercel
+- Render
+
 ---
 
 # 📂 Project Structure
 
-```
-BioArchive/
+```text
+BioArchive
 │
-├── client/          # React Frontend
-├── server/          # Express Backend
+├── client/
+│   ├── src/
+│   ├── public/
+│   └── package.json
 │
-├── package.json
+├── server/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── utils/
+│   └── server.js
+│
 └── README.md
 ```
 
 ---
 
-# Getting Started
+# ⚙️ Local Installation
 
-## Clone Repository
+### Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/BioArchive.git
-cd BioArchive
+git clone https://github.com/Shivendr0309/BioArchive.git
 ```
 
----
-
-## Install Dependencies
-
-### Frontend
+### Install Dependencies
 
 ```bash
 cd client
 npm install
-```
 
-### Backend
-
-```bash
 cd ../server
 npm install
 ```
 
----
+### Configure Environment Variables
 
-# ⚙ Environment Variables
+Create a `.env` file inside the **server** directory.
 
-## Backend (.env)
+```env
+PORT=5000
 
+MONGO_URI=YOUR_MONGODB_URI
 
+JWT_SECRET=YOUR_SECRET
 
-MONGO_URI=your_mongodb_connection_string
+CLIENT_URL=http://localhost:5173
 
-JWT_SECRET=your_secret_key
+CLOUDINARY_CLOUD_NAME=YOUR_CLOUD_NAME
 
-CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=YOUR_API_KEY
 
-CLOUDINARY_API_KEY=your_api_key
-
-CLOUDINARY_API_SECRET=your_api_secret
+CLOUDINARY_API_SECRET=YOUR_API_SECRET
 ```
 
----
+### Start Development Server
 
-
-
-# 📸 Screenshots
-
-> Add screenshots after deployment.
-
-### Home
-
-![Home](screenshots/home.png)
-
-### Search
-
-![Search](screenshots/search.png)
-
-### Dashboard
-
-![Dashboard](screenshots/dashboard.png)
-
-### Blog Details
-
-![Blog](screenshots/blog-details.png)
-
-### Editor
-
-![Editor](screenshots/editor.png)
-
----
-
-# 🔮 Future Improvements
-
-- Email Verification
-- Password Reset
-- Follow Authors
-- Notifications
-- Trending Articles
-- Rich Analytics Dashboard
-- Article Draft Autosave
-- AI-powered Article Recommendations
-
----
-
-# 🤝 Contributing
-
-Contributions are welcome!
-
-1. Fork the repository
-
-2. Create a feature branch
+Backend
 
 ```bash
-git checkout -b feature-name
+npm run dev
 ```
 
-3. Commit your changes
+Frontend
 
 ```bash
-git commit -m "Add feature"
+npm run dev
 ```
-
-4. Push your branch
-
-```bash
-git push origin feature-name
-```
-
-5. Open a Pull Request
 
 ---
 
-# 📄 License
+# 📡 API Overview
 
-This project is licensed under the MIT License.
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| POST | `/api/auth/register` | Register User |
+| POST | `/api/auth/login` | Login User |
+| GET | `/api/blogs` | Fetch Blogs |
+| POST | `/api/blogs` | Create Blog |
+| PUT | `/api/blogs/:id` | Update Blog |
+| DELETE | `/api/blogs/:id` | Delete Blog |
+| PUT | `/api/profile` | Update Profile |
+
+---
+
+# 🎯 Roadmap
+
+- ❤️ Persistent Likes
+- 👥 Follow Authors
+- 🔔 Notifications
+- 📈 Article Analytics
+- 🤖 AI-powered Article Summaries
+- 🤖 AI-generated Tags
+- 🌍 Multi-language Support
 
 ---
 
@@ -209,9 +195,12 @@ This project is licensed under the MIT License.
 
 **Shivendra Singh**
 
-GitHub: https://github.com/Shivendr0309
+GitHub
 
-LinkedIn: www.linkedin.com/in/shivendra-dev
+https://github.com/Shivendr0309
+
 ---
 
-⭐ If you found this project helpful, consider giving it a star!
+# ⭐ Support
+
+If you enjoyed this project, consider giving it a **⭐** on GitHub.
