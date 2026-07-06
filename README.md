@@ -1,21 +1,12 @@
-<div align="center">
+<p align="center">
+  <img src="README/assets/banner.png" alt="BioArchive Banner" width="100%">
+</p>
 
-# 📚 BioArchive
+<h1 align="center">📚 BioArchive</h1>
 
-### Modern Full-Stack Blogging Platform
-
-Create • Discover • Share • Connect
-
-<br>
-
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Online-success?style=for-the-badge)](https://bioarchive-blog.vercel.app/)
-[![Backend](https://img.shields.io/badge/API-Render-46E3B7?style=for-the-badge)](https://bioarchive.onrender.com)
-![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-20-339933?style=for-the-badge&logo=node.js&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38BDF8?style=for-the-badge&logo=tailwindcss&logoColor=white)
-
-</div>
+<p align="center">
+Modern Full-Stack Blogging Platform
+</p>
 
 ---
 
