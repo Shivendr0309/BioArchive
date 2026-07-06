@@ -27,7 +27,7 @@ The application focuses on delivering a professional blogging experience with se
 
 ---
 
-# 🚀 Live Demo
+#  Live Demo
 
 ### Frontend
 
@@ -39,7 +39,7 @@ https://bioarchive.onrender.com
 
 ---
 
-# ✨ Key Features
+#  Key Features
 
 | Feature | Status |
 |----------|:------:|
@@ -140,7 +140,7 @@ MONGO_URI=YOUR_MONGODB_URI
 
 JWT_SECRET=YOUR_SECRET
 
-CLIENT_URL=http://localhost:5173
+CLIENT_URL=
 
 CLOUDINARY_CLOUD_NAME=YOUR_CLOUD_NAME
 
