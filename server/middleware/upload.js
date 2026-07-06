@@ -1,32 +1,43 @@
 const multer = require("multer");
-const { CloudinaryStorage } = require("multer-storage-cloudinary");
-const cloudinary = require("../config/cloudinary");
+const path = require("path");
+const fs = require("fs");
 
-const storage = new CloudinaryStorage({
-  cloudinary,
-  params: async (req, file) => ({
-    folder:
-      file.fieldname === "avatar"
-        ? "BioArchive/Profile/Avatar"
-        : file.fieldname === "banner"
-        ? "BioArchive/Profile/Banner"
-        : "BioArchive",
-    allowed_formats: ["jpg", "jpeg", "png", "webp"],
-    public_id: `${Date.now()}-${file.originalname
-      .split(".")[0]
-      .replace(/\s+/g, "-")}`,
-  }),
+// Absolute upload directory
+const uploadDir = path.join(__dirname, "../uploads");
+
+// Create uploads folder if it doesn't exist
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir, { recursive: true });
+}
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, uploadDir);
+  },
+
+  filename: (req, file, cb) => {
+    const uniqueName =
+      Date.now() +
+      "-" +
+      Math.round(Math.random() * 1e9);
+
+    cb(
+      null,
+      uniqueName + path.extname(file.originalname)
+    );
+  },
 });
 
 const fileFilter = (req, file, cb) => {
-  const allowed = [
-    "image/jpeg",
-    "image/jpg",
-    "image/png",
-    "image/webp",
-  ];
+  const allowedTypes = /jpeg|jpg|png|webp/;
 
-  if (allowed.includes(file.mimetype)) {
+  const isValid =
+    allowedTypes.test(file.mimetype) &&
+    allowedTypes.test(
+      path.extname(file.originalname).toLowerCase()
+    );
+
+  if (isValid) {
     cb(null, true);
   } else {
     cb(new Error("Only image files are allowed"), false);

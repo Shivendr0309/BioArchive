@@ -1,7 +1,8 @@
 const Profile = require("../models/Profile");
 const User = require("../models/User");
 const Blog = require("../models/Blog");
-
+const cloudinary = require("../config/cloudinary");
+const fs = require("fs-extra");
 // ==========================
 // Create Profile
 // ==========================
@@ -147,7 +148,16 @@ try {
 } catch (err) {
   console.log("Cloudinary ping failed:", err.message);
 }
-      profile.avatar = avatarFile.path || avatarFile.secure_url;
+      const result = await cloudinary.uploader.upload(
+  avatarFile.path,
+  {
+    folder: "BioArchive/Profile/Avatar",
+  }
+);
+
+profile.avatar = result.secure_url;
+
+await fs.remove(avatarFile.path);
     }
 
     // ==========================
@@ -161,7 +171,16 @@ try {
     ) {
       const bannerFile = req.files.banner[0];
 
-      profile.banner = bannerFile.path || bannerFile.secure_url;
+     const result = await cloudinary.uploader.upload(
+  bannerFile.path,
+  {
+    folder: "BioArchive/Profile/Banner",
+  }
+);
+
+profile.banner = result.secure_url;
+
+await fs.remove(bannerFile.path);
     }
 
     await profile.save();
@@ -184,7 +203,17 @@ try {
     console.error(error);
 
     // Cleanup temporary files if upload fails
-   
+   try {
+  if (req.files?.avatar?.[0]) {
+    await fs.remove(req.files.avatar[0].path);
+  }
+
+  if (req.files?.banner?.[0]) {
+    await fs.remove(req.files.banner[0].path);
+  }
+} catch (cleanupError) {
+  console.error(cleanupError);
+}
 
     res.status(500).json({
       success: false,
