@@ -18,17 +18,20 @@ The application focuses on delivering a professional blogging experience with se
 
 ---
 
-#  Live Demo
 
-### Frontend
+<div align="center">
 
-https://bioarchive-blog.vercel.app/
+## Live Demo
 
-### Backend API
+<a href="https://bioarchive-blog.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/🌐_Live_Demo-Visit_Website-00C853?style=for-the-badge" />
+</a>
 
-https://bioarchive.onrender.com
+<a href="https://bioarchive.onrender.com" target="_blank">
+    <img src="https://img.shields.io/badge/⚙️_Backend_API-Render-2962FF?style=for-the-badge" />
+</a>
 
----
+</div>
 
 #  Key Features
 
@@ -49,34 +52,80 @@ https://bioarchive.onrender.com
 | Dark Mode | ✅ |
 
 ---
+# 📸 Application Preview
 
-# 🛠 Tech Stack
+<p align="center">
+<img src="README/assets/home.png" width="90%">
+</p>
 
-## Frontend
-
-- React
-- Vite
-- Tailwind CSS
-- React Router
-- Axios
-- TipTap Editor
-
-## Backend
-
-- Node.js
-- Express.js
-- MongoDB Atlas
-- Mongoose
-- JWT Authentication
-- Multer
-- Cloudinary
-
-## Deployment
-
-- Vercel
-- Render
+<p align="center"><b>🏠 Home Page</b></p>
 
 ---
+
+<p align="center">
+<img src="README/assets/search.png" width="90%">
+</p>
+
+<p align="center"><b>🔍 Search Articles</b></p>
+
+---
+
+<p align="center">
+<img src="README/assets/editor.png" width="90%">
+</p>
+
+<p align="center"><b>✍️ Rich Text Editor</b></p>
+
+---
+
+<p align="center">
+<img src="README/assets/blog.png" width="90%">
+</p>
+
+<p align="center"><b>📖 Blog Details</b></p>
+
+---
+
+<p align="center">
+<img src="README/assets/profile.png" width="90%">
+</p>
+
+<p align="center"><b>👤 User Profile</b></p>
+
+---
+
+<p align="center">
+<img src="README/assets/dashboard.png" width="90%">
+</p>
+
+<p align="center"><b>📊 Dashboard</b></p>
+# 🏗️ System Architecture
+
+<p align="center">
+<img src="README/assets/architecture.png" width="95%">
+</p>
+
+## 🛠 Tech Stack
+
+### Frontend
+
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38BDF8?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white)
+
+### Backend
+
+![NodeJS](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB_Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)
+![Cloudinary](https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=cloudinary&logoColor=white)
+
+### Deployment
+
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)
 
 # 📂 Project Structure
 
