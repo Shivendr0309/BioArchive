@@ -9,6 +9,15 @@ Modern Full-Stack Blogging Platform
 </p>
 
 ---
+<p align="center">
+
+![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-20-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/Express.js-4-000000?style=for-the-badge&logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
+
+</p>
 
 # ✨ Overview
 
@@ -17,7 +26,11 @@ BioArchive is a modern full-stack blogging platform where users can write, publi
 The application focuses on delivering a professional blogging experience with secure authentication, rich text editing, Cloudinary-powered media uploads, user profiles, bookmarks, comments, and a personalized dashboard.
 
 ---
+# 💡 Why BioArchive?
 
+BioArchive was built to provide a modern and intuitive blogging experience while showcasing best practices in full-stack web development.
+
+The project focuses on secure authentication, scalable backend architecture, cloud-based media management, and a responsive user interface. It demonstrates the complete lifecycle of a production-style MERN application—from API design and database management to deployment on modern cloud platforms.
 
 <div align="center">
 
@@ -52,7 +65,7 @@ The application focuses on delivering a professional blogging experience with se
 | Dark Mode | ✅ |
 
 ---
-# 📸 Application Preview
+# 📸 ScreenShots
 
 <p align="center">
 <img src="README/assets/home.png" width="90%">
@@ -233,11 +246,25 @@ npm run dev
 
 # 👨‍💻 Author
 
+<p align="center">
+
 **Shivendra Singh**
 
-GitHub
+Full Stack Developer | MERN Stack
 
-https://github.com/Shivendr0309
+<a href="https://github.com/Shivendr0309">
+  <img src="https://img.shields.io/badge/GitHub-Shivendr0309-181717?style=for-the-badge&logo=github&logoColor=white" />
+</a>
+
+<a href="https://www.linkedin.com/in/shivendra-dev/">
+  <img src="https://img.shields.io/badge/LinkedIn-Shivendra%20Singh-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+</a>
+
+<a href="https://shivendr0309.github.io/Portfolio/">
+  <img src="https://img.shields.io/badge/Portfolio-Visit-00C853?style=for-the-badge&logo=googlechrome&logoColor=white" />
+</a>
+
+</p>
 
 ---
 
