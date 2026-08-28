@@ -114,7 +114,12 @@ app.get(
     });
   }
 );
-
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "Pathwise API is running",
+  });
+});
 /* ----------------------------------
    404 Handler
 ----------------------------------- */
