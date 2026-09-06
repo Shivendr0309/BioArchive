@@ -128,29 +128,60 @@ function Hero({ blog }) {
         overflow-hidden
         rounded-[28px]
         border
-        border-slate-800
-        bg-slate-950
+        border-slate-200
+        bg-white
+        dark:border-slate-800
+        dark:bg-slate-950
       "
     >
       {/* ===================================================== */}
       {/* BACKGROUND */}
       {/* ===================================================== */}
 
+      {/* Light background */}
       <div
         className="
           absolute
           inset-0
-          bg-[radial-gradient(circle_at_10%_25%,rgba(99,102,241,0.18),transparent_30%),radial-gradient(circle_at_90%_15%,rgba(59,130,246,0.14),transparent_30%),linear-gradient(to_bottom,#020617,#0b1120)]
+          bg-[radial-gradient(circle_at_10%_25%,rgba(99,102,241,0.10),transparent_30%),radial-gradient(circle_at_90%_15%,rgba(59,130,246,0.08),transparent_30%),linear-gradient(to_bottom,#ffffff,#f8fafc)]
+          dark:hidden
         "
       />
 
-      {/* Grid */}
-
+      {/* Dark background */}
       <div
         className="
           absolute
           inset-0
+          hidden
+          bg-[radial-gradient(circle_at_10%_25%,rgba(99,102,241,0.18),transparent_30%),radial-gradient(circle_at_90%_15%,rgba(59,130,246,0.14),transparent_30%),linear-gradient(to_bottom,#020617,#0b1120)]
+          dark:block
+        "
+      />
+
+      {/* Light grid */}
+      <div
+        className="
+          absolute
+          inset-0
+          opacity-[0.035]
+          dark:hidden
+        "
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(79,70,229,0.7) 1px, transparent 1px), linear-gradient(90deg, rgba(79,70,229,0.7) 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+        }}
+      />
+
+      {/* Dark grid */}
+      <div
+        className="
+          absolute
+          inset-0
+          hidden
           opacity-[0.055]
+          dark:block
         "
         style={{
           backgroundImage:
@@ -159,33 +190,63 @@ function Hero({ blog }) {
         }}
       />
 
-      {/* Left glow */}
-
+      {/* Light glows */}
       <div
         className="
           absolute
           -left-40
           top-1/4
+          hidden
           h-[500px]
           w-[500px]
           rounded-full
-          bg-indigo-600/10
+          bg-indigo-500/10
           blur-[130px]
+          dark:block
         "
       />
-
-      {/* Right glow */}
 
       <div
         className="
           absolute
           -right-40
           top-0
+          hidden
           h-[500px]
           w-[500px]
           rounded-full
-          bg-blue-600/10
+          bg-blue-500/10
           blur-[130px]
+          dark:block
+        "
+      />
+
+      {/* Soft light-mode glow */}
+      <div
+        className="
+          absolute
+          -left-40
+          top-1/4
+          h-[450px]
+          w-[450px]
+          rounded-full
+          bg-indigo-500/5
+          blur-[120px]
+          dark:hidden
+        "
+      />
+
+      <div
+        className="
+          absolute
+          -right-40
+          top-0
+          h-[450px]
+          w-[450px]
+          rounded-full
+          bg-blue-500/5
+          blur-[120px]
+          dark:hidden
         "
       />
 
@@ -199,9 +260,10 @@ function Hero({ blog }) {
           right-8
           top-8
           hidden
-          opacity-30
+          opacity-20
           lg:block
           xl:right-14
+          dark:opacity-30
         "
       >
         <div className="grid grid-cols-5 gap-4">
@@ -225,9 +287,10 @@ function Hero({ blog }) {
           bottom-16
           left-8
           hidden
-          opacity-20
+          opacity-10
           lg:block
           xl:left-14
+          dark:opacity-20
         "
       >
         <div className="grid grid-cols-5 gap-4">
@@ -296,8 +359,9 @@ function Hero({ blog }) {
                 py-2
                 text-sm
                 font-semibold
-                text-indigo-300
+                text-indigo-600
                 backdrop-blur
+                dark:text-indigo-300
               "
             >
               <Sparkles size={15} />
@@ -314,10 +378,11 @@ function Hero({ blog }) {
                 font-black
                 leading-[0.9]
                 tracking-[-0.04em]
-                text-white
+                text-slate-950
                 sm:text-7xl
                 lg:text-[5.8rem]
                 xl:text-[7rem]
+                dark:text-white
               "
             >
               Write.
@@ -326,11 +391,14 @@ function Hero({ blog }) {
               <span
                 className="
                   bg-gradient-to-r
-                  from-indigo-400
-                  via-violet-400
-                  to-blue-400
+                  from-indigo-500
+                  via-violet-500
+                  to-blue-500
                   bg-clip-text
                   text-transparent
+                  dark:from-indigo-400
+                  dark:via-violet-400
+                  dark:to-blue-400
                 "
               >
                 Share.
@@ -349,10 +417,11 @@ function Hero({ blog }) {
                 max-w-2xl
                 text-base
                 leading-7
-                text-slate-400
+                text-slate-600
                 sm:text-lg
                 lg:text-xl
                 lg:leading-8
+                dark:text-slate-400
               "
             >
               Create technical articles, document what you learn,
@@ -374,18 +443,21 @@ function Hero({ blog }) {
                   justify-center
                   gap-3
                   rounded-xl
-                  bg-white
+                  bg-slate-950
                   px-7
                   py-3.5
                   text-sm
                   font-bold
-                  text-slate-950
+                  text-white
                   shadow-lg
-                  shadow-black/20
+                  shadow-slate-950/10
                   transition-all
                   duration-300
                   hover:-translate-y-1
                   hover:shadow-xl
+                  dark:bg-white
+                  dark:text-slate-950
+                  dark:shadow-black/20
                 "
               >
                 <PenSquare size={17} />
@@ -414,19 +486,24 @@ function Hero({ blog }) {
                   gap-3
                   rounded-xl
                   border
-                  border-slate-700
-                  bg-slate-900/70
+                  border-slate-300
+                  bg-slate-100/80
                   px-7
                   py-3.5
                   text-sm
                   font-bold
-                  text-white
+                  text-slate-900
                   backdrop-blur
                   transition-all
                   duration-300
                   hover:-translate-y-1
-                  hover:border-indigo-500/60
-                  hover:bg-slate-800
+                  hover:border-indigo-400
+                  hover:bg-indigo-50
+                  dark:border-slate-700
+                  dark:bg-slate-900/70
+                  dark:text-white
+                  dark:hover:border-indigo-500/60
+                  dark:hover:bg-slate-800
                 "
               >
                 <Search size={17} />
@@ -457,6 +534,7 @@ function Hero({ blog }) {
                 gap-y-2
                 text-xs
                 text-slate-500
+                dark:text-slate-500
               "
             >
               <span className="flex items-center gap-2">
@@ -465,7 +543,8 @@ function Hero({ blog }) {
                     h-1.5
                     w-1.5
                     rounded-full
-                    bg-emerald-400
+                    bg-emerald-500
+                    dark:bg-emerald-400
                   "
                 />
 
@@ -490,8 +569,9 @@ function Hero({ blog }) {
                 absolute
                 inset-8
                 rounded-[36px]
-                bg-indigo-500/20
+                bg-indigo-500/10
                 blur-[70px]
+                dark:bg-indigo-500/20
               "
             />
 
@@ -503,13 +583,16 @@ function Hero({ blog }) {
                 overflow-hidden
                 rounded-[28px]
                 border
-                border-slate-700
-                bg-slate-900/90
+                border-slate-200
+                bg-white/90
                 p-5
-                shadow-2xl
-                shadow-black/30
+                shadow-xl
+                shadow-slate-900/5
                 backdrop-blur-xl
                 sm:p-6
+                dark:border-slate-700
+                dark:bg-slate-900/90
+                dark:shadow-black/30
               "
             >
               {/* ================================================= */}
@@ -522,8 +605,9 @@ function Hero({ blog }) {
                   items-center
                   justify-between
                   border-b
-                  border-slate-800
+                  border-slate-200
                   pb-5
+                  dark:border-slate-800
                 "
               >
                 <div className="flex items-center gap-3">
@@ -535,8 +619,10 @@ function Hero({ blog }) {
                       items-center
                       justify-center
                       rounded-xl
-                      bg-indigo-500/15
-                      text-indigo-400
+                      bg-indigo-500/10
+                      text-indigo-600
+                      dark:bg-indigo-500/15
+                      dark:text-indigo-400
                     "
                   >
                     <BookOpen size={21} />
@@ -547,14 +633,21 @@ function Hero({ blog }) {
                       className="
                         text-sm
                         font-bold
-                        text-white
+                        text-slate-900
                         sm:text-base
+                        dark:text-white
                       "
                     >
                       Knowledge Archive
                     </p>
 
-                    <p className="text-xs text-slate-400">
+                    <p
+                      className="
+                        text-xs
+                        text-slate-500
+                        dark:text-slate-400
+                      "
+                    >
                       Ideas worth remembering
                     </p>
                   </div>
@@ -570,7 +663,8 @@ function Hero({ blog }) {
                     py-1.5
                     text-xs
                     font-semibold
-                    text-emerald-400
+                    text-emerald-600
+                    dark:text-emerald-400
                   "
                 >
                   <span className="mr-1">●</span>
@@ -592,11 +686,14 @@ function Hero({ blog }) {
                     overflow-hidden
                     rounded-2xl
                     border
-                    border-slate-800
-                    bg-slate-950
+                    border-slate-200
+                    bg-slate-50
                     transition-all
                     duration-300
-                    hover:border-indigo-500/40
+                    hover:border-indigo-400/50
+                    dark:border-slate-800
+                    dark:bg-slate-950
+                    dark:hover:border-indigo-500/40
                   "
                 >
                   {/* Blog Image */}
@@ -630,14 +727,20 @@ function Hero({ blog }) {
                           items-center
                           justify-center
                           bg-gradient-to-br
-                          from-indigo-600/30
-                          via-violet-600/20
-                          to-blue-600/30
+                          from-indigo-100
+                          via-violet-100
+                          to-blue-100
+                          dark:from-indigo-600/30
+                          dark:via-violet-600/20
+                          dark:to-blue-600/30
                         "
                       >
                         <BookOpen
                           size={48}
-                          className="text-indigo-300/60"
+                          className="
+                            text-indigo-400/70
+                            dark:text-indigo-300/60
+                          "
                         />
                       </div>
                     )}
@@ -649,7 +752,7 @@ function Hero({ blog }) {
                         absolute
                         inset-0
                         bg-gradient-to-t
-                        from-slate-950/80
+                        from-black/60
                         via-transparent
                         to-transparent
                       "
@@ -667,8 +770,8 @@ function Hero({ blog }) {
                         gap-2
                         rounded-full
                         border
-                        border-white/10
-                        bg-slate-950/75
+                        border-white/20
+                        bg-black/60
                         px-3
                         py-1.5
                         text-xs
@@ -706,7 +809,8 @@ function Hero({ blog }) {
                           px-3
                           py-1.5
                           font-semibold
-                          text-indigo-400
+                          text-indigo-600
+                          dark:text-indigo-400
                         "
                       >
                         {category}
@@ -748,11 +852,13 @@ function Hero({ blog }) {
                         text-xl
                         font-bold
                         leading-snug
-                        text-white
+                        text-slate-900
                         transition-colors
                         duration-300
-                        group-hover:text-indigo-300
+                        group-hover:text-indigo-600
                         sm:text-2xl
+                        dark:text-white
+                        dark:group-hover:text-indigo-300
                       "
                     >
                       {title}
@@ -766,7 +872,8 @@ function Hero({ blog }) {
                         line-clamp-3
                         text-sm
                         leading-6
-                        text-slate-400
+                        text-slate-600
+                        dark:text-slate-400
                       "
                     >
                       {excerpt}
@@ -793,17 +900,25 @@ function Hero({ blog }) {
                             items-center
                             justify-center
                             rounded-full
-                            bg-indigo-500
+                            bg-indigo-600
                             text-sm
                             font-bold
                             text-white
+                            dark:bg-indigo-500
                           "
                         >
                           {author.charAt(0).toUpperCase()}
                         </div>
 
                         <div>
-                          <p className="text-xs font-bold text-white">
+                          <p
+                            className="
+                              text-xs
+                              font-bold
+                              text-slate-900
+                              dark:text-white
+                            "
+                          >
                             {author}
                           </p>
 
@@ -823,7 +938,8 @@ function Hero({ blog }) {
                           gap-1.5
                           text-xs
                           font-semibold
-                          text-indigo-400
+                          text-indigo-600
+                          dark:text-indigo-400
                         "
                       >
                         Read story
@@ -856,28 +972,38 @@ function Hero({ blog }) {
                     rounded-2xl
                     border
                     border-dashed
-                    border-slate-700
-                    bg-slate-950
+                    border-slate-300
+                    bg-slate-50
                     text-center
+                    dark:border-slate-700
+                    dark:bg-slate-950
                   "
                 >
                   <div>
                     <BookOpen
                       size={40}
-                      className="mx-auto text-slate-600"
+                      className="mx-auto text-slate-400 dark:text-slate-600"
                     />
 
                     <p
                       className="
                         mt-4
                         font-semibold
-                        text-slate-400
+                        text-slate-600
+                        dark:text-slate-400
                       "
                     >
                       No articles available yet
                     </p>
 
-                    <p className="mt-2 text-sm text-slate-600">
+                    <p
+                      className="
+                        mt-2
+                        text-sm
+                        text-slate-500
+                        dark:text-slate-600
+                      "
+                    >
                       Be the first to share your knowledge.
                     </p>
                   </div>
@@ -893,19 +1019,31 @@ function Hero({ blog }) {
                   className="
                     rounded-2xl
                     border
-                    border-slate-800
-                    bg-slate-950
+                    border-slate-200
+                    bg-slate-50
                     p-4
                     transition-all
                     duration-300
-                    hover:border-indigo-500/30
+                    hover:border-indigo-400/40
+                    hover:bg-indigo-50/50
+                    dark:border-slate-800
+                    dark:bg-slate-950
+                    dark:hover:border-indigo-500/30
                   "
                 >
                   <p className="text-xs text-slate-500">
                     Discover
                   </p>
 
-                  <p className="mt-1 text-sm font-bold text-white">
+                  <p
+                    className="
+                      mt-1
+                      text-sm
+                      font-bold
+                      text-slate-900
+                      dark:text-white
+                    "
+                  >
                     New perspectives
                   </p>
                 </div>
@@ -914,19 +1052,31 @@ function Hero({ blog }) {
                   className="
                     rounded-2xl
                     border
-                    border-slate-800
-                    bg-slate-950
+                    border-slate-200
+                    bg-slate-50
                     p-4
                     transition-all
                     duration-300
-                    hover:border-indigo-500/30
+                    hover:border-indigo-400/40
+                    hover:bg-indigo-50/50
+                    dark:border-slate-800
+                    dark:bg-slate-950
+                    dark:hover:border-indigo-500/30
                   "
                 >
                   <p className="text-xs text-slate-500">
                     Create
                   </p>
 
-                  <p className="mt-1 text-sm font-bold text-white">
+                  <p
+                    className="
+                      mt-1
+                      text-sm
+                      font-bold
+                      text-slate-900
+                      dark:text-white
+                    "
+                  >
                     Share your knowledge
                   </p>
                 </div>
@@ -946,8 +1096,10 @@ function Hero({ blog }) {
               flex-1
               bg-gradient-to-r
               from-transparent
-              via-slate-700
-              to-slate-700
+              via-slate-300
+              to-slate-300
+              dark:via-slate-700
+              dark:to-slate-700
             "
           />
 
@@ -957,7 +1109,8 @@ function Hero({ blog }) {
               w-2
               rounded-full
               bg-indigo-500
-              shadow-[0_0_12px_rgba(99,102,241,0.8)]
+              shadow-[0_0_12px_rgba(99,102,241,0.5)]
+              dark:shadow-[0_0_12px_rgba(99,102,241,0.8)]
             "
           />
 
@@ -967,8 +1120,10 @@ function Hero({ blog }) {
               flex-1
               bg-gradient-to-l
               from-transparent
-              via-slate-700
-              to-slate-700
+              via-slate-300
+              to-slate-300
+              dark:via-slate-700
+              dark:to-slate-700
             "
           />
         </div>
@@ -995,7 +1150,8 @@ function Hero({ blog }) {
               justify-center
               gap-3
               lg:border-r
-              lg:border-slate-800
+              lg:border-slate-200
+              dark:lg:border-slate-800
             "
           >
             <div
@@ -1008,14 +1164,22 @@ function Hero({ blog }) {
                 justify-center
                 rounded-xl
                 bg-indigo-500/10
-                text-indigo-400
+                text-indigo-600
+                dark:text-indigo-400
               "
             >
               <BookOpen size={20} />
             </div>
 
             <div>
-              <p className="text-xl font-black text-white">
+              <p
+                className="
+                  text-xl
+                  font-black
+                  text-slate-950
+                  dark:text-white
+                "
+              >
                 {formatStat(stats.totalBlogs)}
               </p>
 
@@ -1034,7 +1198,8 @@ function Hero({ blog }) {
               justify-center
               gap-3
               lg:border-r
-              lg:border-slate-800
+              lg:border-slate-200
+              dark:lg:border-slate-800
             "
           >
             <div
@@ -1047,14 +1212,22 @@ function Hero({ blog }) {
                 justify-center
                 rounded-xl
                 bg-indigo-500/10
-                text-indigo-400
+                text-indigo-600
+                dark:text-indigo-400
               "
             >
               <Users size={20} />
             </div>
 
             <div>
-              <p className="text-xl font-black text-white">
+              <p
+                className="
+                  text-xl
+                  font-black
+                  text-slate-950
+                  dark:text-white
+                "
+              >
                 {formatStat(stats.totalUsers)}
               </p>
 
@@ -1073,7 +1246,8 @@ function Hero({ blog }) {
               justify-center
               gap-3
               lg:border-r
-              lg:border-slate-800
+              lg:border-slate-200
+              dark:lg:border-slate-800
             "
           >
             <div
@@ -1086,14 +1260,22 @@ function Hero({ blog }) {
                 justify-center
                 rounded-xl
                 bg-indigo-500/10
-                text-indigo-400
+                text-indigo-600
+                dark:text-indigo-400
               "
             >
               <Heart size={20} />
             </div>
 
             <div>
-              <p className="text-xl font-black text-white">
+              <p
+                className="
+                  text-xl
+                  font-black
+                  text-slate-950
+                  dark:text-white
+                "
+              >
                 {formatStat(stats.totalLikes)}
               </p>
 
@@ -1123,14 +1305,22 @@ function Hero({ blog }) {
                 justify-center
                 rounded-xl
                 bg-indigo-500/10
-                text-indigo-400
+                text-indigo-600
+                dark:text-indigo-400
               "
             >
               <Eye size={20} />
             </div>
 
             <div>
-              <p className="text-xl font-black text-white">
+              <p
+                className="
+                  text-xl
+                  font-black
+                  text-slate-950
+                  dark:text-white
+                "
+              >
                 {formatStat(stats.totalViews)}
               </p>
 
