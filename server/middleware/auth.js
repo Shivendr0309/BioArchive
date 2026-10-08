@@ -3,49 +3,17 @@ const User = require("../models/User");
 
 const protect = async (req, res, next) => {
   try {
-    const authHeader = req.headers.authorization;
-
-    // Check for Bearer token
-    if (
-      !authHeader ||
-      !authHeader.startsWith("Bearer ")
-    ) {
-      return res.status(401).json({
-        success: false,
-        message: "Access denied. No token provided.",
-      });
-    }
-
-    // Extract token
-    const token = authHeader.split(" ")[1];
-
-    // Verify token
-    const decoded = jwt.verify(
-      token,
-      process.env.JWT_SECRET
-    );
-
-    // Find user
-    const user = await User.findById(
-      decoded.id
-    ).select("-password");
-
-    if (!user) {
-      return res.status(401).json({
-        success: false,
-        message: "User no longer exists.",
-      });
-    }
-
-    // Attach full user document
+    const header = req.headers.authorization || "";
+    if (!header.startsWith("Bearer ")) return res.status(401).json({ success: false, message: "Authentication required" });
+    const token = header.slice(7).trim();
+    if (!token) return res.status(401).json({ success: false, message: "Authentication required" });
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const user = await User.findById(decoded.id).select("-password");
+    if (!user) return res.status(401).json({ success: false, message: "User no longer exists" });
     req.user = user;
-
     next();
-  } catch (error) {
-    return res.status(401).json({
-      success: false,
-      message: "Invalid or expired token.",
-    });
+  } catch {
+    return res.status(401).json({ success: false, message: "Invalid or expired token" });
   }
 };
 
