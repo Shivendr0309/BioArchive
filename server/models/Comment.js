@@ -2,29 +2,13 @@ const mongoose = require("mongoose");
 
 const commentSchema = new mongoose.Schema(
   {
-    blog: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Blog",
-      required: true,
-    },
-
-    user: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-      required: true,
-    },
-
-    text: {
-      type: String,
-      required: true,
-      trim: true,
-    },
+    blog: { type: mongoose.Schema.Types.ObjectId, ref: "Blog", required: true, index: true },
+    user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true, index: true },
+    text: { type: String, required: true, trim: true, maxlength: 2000 },
   },
-  {
-    timestamps: true,
-  }
+  { timestamps: true }
 );
 
-const Comment = mongoose.model("Comment", commentSchema);
+commentSchema.index({ blog: 1, createdAt: -1 });
 
-module.exports = Comment;
+module.exports = mongoose.model("Comment", commentSchema);
