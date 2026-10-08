@@ -5,7 +5,7 @@ function SearchHero() {
     <section
       className="
         overflow-hidden
-        rounded-[36px]
+        rounded-[28px]
         bg-gradient-to-br
         from-slate-900
         via-slate-800
