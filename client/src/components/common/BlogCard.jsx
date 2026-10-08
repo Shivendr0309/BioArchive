@@ -46,14 +46,14 @@ function BlogCard({ blog }) {
       className="
         group
         overflow-hidden
-        rounded-[32px]
+        rounded-[24px]
         border
         border-slate-200
         bg-white
-        shadow-sm
+        shadow-[0_8px_30px_rgba(20,20,20,0.05)]
         transition-all
         duration-300
-        hover:-translate-y-2
+        hover:-translate-y-1.5
         hover:shadow-2xl
         dark:border-slate-800
         dark:bg-slate-900
@@ -100,7 +100,7 @@ function BlogCard({ blog }) {
 
       {/* Content */}
 
-      <div className="p-7">
+      <div className="p-6">
 
         {/* Category */}
 
@@ -114,7 +114,7 @@ function BlogCard({ blog }) {
           className="
             mt-5
             line-clamp-2
-            text-[28px]
+            text-[25px]
             font-black
             leading-tight
             tracking-tight
@@ -135,7 +135,7 @@ function BlogCard({ blog }) {
             mt-5
             line-clamp-3
             text-[16px]
-            leading-8
+            leading-7
             text-slate-600
             dark:text-slate-400
           "
