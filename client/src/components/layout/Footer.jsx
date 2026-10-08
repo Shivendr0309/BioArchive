@@ -12,7 +12,7 @@ import {
 
 function Footer() {
   return (
-    <footer className="mt-24 border-t border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950">
+    <footer className="mt-20 border-t border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950">
 
       <div className="mx-auto max-w-7xl px-6 py-16">
 
