@@ -89,12 +89,12 @@ function Navbar() {
 
         <Link
           to="/"
-          className="flex items-center gap-2"
+          className="flex items-center gap-3"
         >
-          {/* <BookOpen
-            size={26}
+          <BookOpen
+            size={24}
             className="text-indigo-600"
-          /> */}
+          />
           
 
           <span className="text-2xl font-black tracking-tight text-slate-900 dark:text-white">
@@ -104,7 +104,7 @@ function Navbar() {
 
         {/* Desktop Navigation */}
 
-        <nav className="hidden items-center gap-10 lg:flex">
+        <nav className="hidden items-center gap-8 lg:flex">
 
           <NavLink
             to="/"
@@ -139,7 +139,7 @@ function Navbar() {
 
           <Link
             to="/search"
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-0.5 hover:border-indigo-300 hover:text-indigo-600 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-indigo-500 dark:hover:text-indigo-400"
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200/80 bg-white/70 transition-all duration-300 hover:-translate-y-0.5 hover:border-indigo-300 hover:bg-indigo-50 hover:text-indigo-600 dark:border-slate-700 dark:bg-slate-900/70 dark:hover:border-indigo-500 dark:hover:bg-slate-800 dark:hover:text-indigo-400"
           >
             <FiSearch size={18} />
           </Link>
@@ -161,7 +161,7 @@ function Navbar() {
             <>
               <Link
                 to="/create-blog"
-                className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-2.5 font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-indigo-700"
+                className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-2.5 font-semibold text-white shadow-sm shadow-indigo-600/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-indigo-700"
               >
                 <FiEdit3 size={17} />
 
