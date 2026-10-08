@@ -275,26 +275,61 @@ select:focus-visible {
   outline-offset: 2px;
 }
 
-/* Dark-mode surfaces */
+/* Neutral dark-mode surfaces */
+html.dark body {
+  background:
+    radial-gradient(circle at 50% -10%, rgba(255,255,255,.035), transparent 26rem),
+    #0b0b0d;
+}
+
 html.dark .bg-white {
-  background-color: #101827;
-}
-
-html.dark .bg-slate-900 {
-  background-color: #0d1522;
-}
-
-html.dark .bg-slate-950 {
-  background-color: #080d17;
-}
-
-/* Reduce excessive pure-white contrast in light UI */
-.bg-slate-50 {
-  background-color: #f8faff;
+  background-color: #141416;
 }
 
 html.dark .bg-slate-50 {
-  background-color: #0d1522;
+  background-color: #111113;
+}
+
+html.dark .bg-slate-900 {
+  background-color: #141416;
+}
+
+html.dark .bg-slate-950 {
+  background-color: #0b0b0d;
+}
+
+html.dark .border-slate-200,
+html.dark .border-slate-300 {
+  border-color: #27272a;
+}
+
+html.dark .border-slate-700,
+html.dark .border-slate-800 {
+  border-color: #27272a;
+}
+
+html.dark .text-slate-900,
+html.dark .text-slate-950 {
+  color: #f4f4f5;
+}
+
+html.dark .text-slate-700,
+html.dark .text-slate-600 {
+  color: #d4d4d8;
+}
+
+html.dark .text-slate-500,
+html.dark .text-slate-400 {
+  color: #a1a1aa;
+}
+
+/* Keep indigo as an accent, not the page background */
+html.dark .bg-indigo-600 {
+  background-color: #6366f1;
+}
+
+html.dark .hover\:bg-indigo-700:hover {
+  background-color: #4f46e5;
 }
 
 /* Mobile spacing polish */
