@@ -1,7 +1,7 @@
 function DashboardHeader({ username = "User" }) {
   return (
     <section className="mb-10">
-      <div className="rounded-[36px] border border-slate-200 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-10 text-white shadow-xl dark:border-slate-700 lg:p-14">
+      <div className="rounded-[28px] border border-slate-800 bg-[#151517] p-8 text-white shadow-[0_20px_60px_rgba(0,0,0,0.12)] lg:p-12 dark:border-slate-700">
         
         <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-400">
           Dashboard
