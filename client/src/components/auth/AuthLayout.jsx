@@ -29,7 +29,7 @@ function AuthLayout({
               className="
                 w-full
                 max-w-xl
-                rounded-[32px]
+                rounded-[24px]
                 border
                 border-gray-200
                 bg-white
