@@ -143,3 +143,171 @@ html.dark body {
   height: 0;
   pointer-events: none;
 }
+
+/* =========================================================
+   BioArchive Visual Refresh — styling only
+   ========================================================= */
+
+:root {
+  --bio-bg: #f5f7fb;
+  --bio-surface: #ffffff;
+  --bio-surface-soft: #f8faff;
+  --bio-border: #e6eaf2;
+  --bio-text: #111827;
+  --bio-muted: #64748b;
+  --bio-primary: #4f46e5;
+  --bio-secondary: #06b6d4;
+}
+
+html {
+  background: var(--bio-bg);
+}
+
+body {
+  background:
+    radial-gradient(circle at 8% 0%, rgba(99,102,241,.10), transparent 28rem),
+    radial-gradient(circle at 92% 8%, rgba(6,182,212,.08), transparent 25rem),
+    var(--bio-bg);
+  color: var(--bio-text);
+  letter-spacing: -0.01em;
+}
+
+html.dark body {
+  background:
+    radial-gradient(circle at 8% 0%, rgba(79,70,229,.16), transparent 30rem),
+    radial-gradient(circle at 92% 8%, rgba(6,182,212,.10), transparent 26rem),
+    #070b14;
+  color: #f8fafc;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(79,70,229,.22);
+  color: inherit;
+}
+
+/* Surface polish */
+.bg-white {
+  box-shadow: 0 1px 2px rgba(15,23,42,.03);
+}
+
+.rounded-2xl,
+.rounded-3xl,
+.rounded-[28px],
+.rounded-[32px] {
+  border-color: var(--bio-border);
+}
+
+.dark .rounded-2xl,
+.dark .rounded-3xl,
+.dark .rounded-[28px],
+.dark .rounded-[32px] {
+  border-color: rgba(71,85,105,.55);
+}
+
+/* Make common cards feel lighter and more premium */
+article.group,
+.app-card {
+  box-shadow: 0 10px 35px rgba(15,23,42,.055);
+}
+
+article.group:hover,
+.app-card:hover {
+  box-shadow: 0 20px 55px rgba(79,70,229,.12);
+}
+
+.dark article.group,
+.dark .app-card {
+  box-shadow: 0 16px 45px rgba(0,0,0,.22);
+}
+
+.dark article.group:hover,
+.dark .app-card:hover {
+  box-shadow: 0 22px 60px rgba(0,0,0,.35);
+}
+
+/* Buttons */
+.bg-indigo-600 {
+  box-shadow: 0 8px 20px rgba(79,70,229,.18);
+}
+
+.bg-indigo-600:hover {
+  box-shadow: 0 12px 28px rgba(79,70,229,.28);
+}
+
+/* Inputs */
+input,
+textarea,
+select {
+  transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  box-shadow: 0 0 0 4px rgba(79,70,229,.10);
+}
+
+/* Image treatment */
+img {
+  -webkit-user-drag: none;
+}
+
+.group img {
+  will-change: transform;
+}
+
+/* Smooth page feel */
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgba(79,70,229,.25);
+  outline-offset: 2px;
+}
+
+/* Dark-mode surfaces */
+html.dark .bg-white {
+  background-color: #101827;
+}
+
+html.dark .bg-slate-900 {
+  background-color: #0d1522;
+}
+
+html.dark .bg-slate-950 {
+  background-color: #080d17;
+}
+
+/* Reduce excessive pure-white contrast in light UI */
+.bg-slate-50 {
+  background-color: #f8faff;
+}
+
+html.dark .bg-slate-50 {
+  background-color: #0d1522;
+}
+
+/* Mobile spacing polish */
+@media (max-width: 640px) {
+  body {
+    background:
+      radial-gradient(circle at 50% 0%, rgba(99,102,241,.09), transparent 22rem),
+      var(--bio-bg);
+  }
+
+  html.dark body {
+    background:
+      radial-gradient(circle at 50% 0%, rgba(79,70,229,.13), transparent 22rem),
+      #070b14;
+  }
+}
